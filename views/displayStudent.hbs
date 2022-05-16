@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container">
+		<div id="head">
+			<div>
+				<h2>Student Register</h2>
+			</div>
+			<div align='center'>
+				<form action="/search" method="POST">
+					<input type="text" name="search" required id="search" placeholder="Search by RollNo, Name">
+					<button type="submit" class="searchbtn">Search</button>
+				</form>
+			</div>
+			<div align='right'>
+				<a href='/displayAllStudent' class='btn'>Display All Student</a>
+				<a href='/addStudent' class="btn">Add Student</a>
+			</div>
+		</div>
+        <div class="content">
+            <div id="carddiv">
+                {{#data}}
+                <div id="card">
+                    <div id="cardhead">
+                        <h3> Student Details.</h3>
+                        <h4>Roll No. {{rollno}}</h4>
+                    </div>
+                    <hr width="100%" color="grey">
+                    <br>
+                    <div id="cardbody">
+                        <span>Student Name: {{fname}} {{lname}} </span> <br>
+                        <span>Age: {{age}} </span> <br>
+                        <span>Gender: {{gender}} </span> <br>
+                        <b>Subject Mark:</b> <br>
+                        <div style="margin-left: 50px">
+                            <span>Math Mark: {{mathmark}}</span> <br>
+                            <span>English Mark: {{englishmark}}</span> <br>
+                            <span>Computer Mark: {{computermark}}</span>
+                        </div>
+                        {{/data}}
+                        <span>Favourite Subjects: {{favsub}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
